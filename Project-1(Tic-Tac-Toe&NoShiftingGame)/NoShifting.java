@@ -78,7 +78,7 @@ public class NoShifting implements com.game.InterfGame {
 
     public void play() {
 
-        int moves = 1;
+        int moves = 50;
         char shift = '\0';
         int temp = 0;
 
