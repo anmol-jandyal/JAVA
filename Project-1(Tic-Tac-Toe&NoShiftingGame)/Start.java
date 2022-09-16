@@ -20,10 +20,10 @@ public class Start {
         do {
             Console.clearScr(); // clears the (console screen)
 
-            System.out.println("\n\n\n  welcome to the GAME MENU");
-            System.out.println("\n\n 1.TIC TAC TOE.");
-            System.out.println(" 2. NUMBER SHIFTING GAME.");
-            System.out.println(" e/E. for exit");
+            System.out.println("\n\t\twelcome to the GAME MENU");
+            System.out.println("\n\t\t  1.TIC TAC TOE.");
+            System.out.println("\t\t  2.NUMBER SHIFTING GAME.");
+            System.out.println("\t\t  e/E. for exit");
 
             System.out.print("\n enter your choice:");
 

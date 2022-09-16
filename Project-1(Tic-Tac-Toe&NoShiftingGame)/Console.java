@@ -27,7 +27,7 @@ public class Console {
     }
 
     public static void pause() {
-        System.out.print("\n\nenter to continue............");
+        System.out.print(" enter to continue............");
 
         InputStreamReader reader = new InputStreamReader(System.in);
 

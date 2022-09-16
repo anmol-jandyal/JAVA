@@ -67,19 +67,18 @@ public class NoShifting implements com.game.InterfGame {
                 }
             }
         }
-        Console.pause();
-        ruleSet();
 
+        ruleSet();
         Console.clearScr();
 
-        System.out.println("\n\n\t\tNUMBER SHIFTING GAME");
-        System.out.print("\n\nenter the player name:");
+        System.out.println("\n\t\tNUMBER SHIFTING GAME");
+        System.out.print("\n  enter the player name:");
         player = sc.nextLine();
     }
 
     public void play() {
 
-        int moves = 50;
+        int moves = 1;
         char shift = '\0';
         int temp = 0;
 
@@ -92,7 +91,7 @@ public class NoShifting implements com.game.InterfGame {
             shift = sc.next().charAt(0);
 
             // mk the move
-            if (moveValid(shift) && (shift == 'w' || shift == 's' || shift == 'a' | shift == 'd')) {
+            if (moveValid(shift)) {
 
                 switch (shift) {
                     case 'w':
@@ -119,23 +118,34 @@ public class NoShifting implements com.game.InterfGame {
 
                     default:
                         System.out.println("invalid char");
+                        Console.pause();
                         break;
 
                 }
                 moves--;
+
+                // flushing buffer
+                sc.nextLine();
+
             } else {
                 System.out.println("invalid move");
                 Console.pause();
             }
-            Console.pause();
+
         } while (moves > 0 && !winComparison());
+
+        // final display of table
+        Console.clearScr();
+        boardDisplay();
+        System.out.println("\n\nRemaining moves: " + moves);
 
         if (moves > 0) {
             System.out.println("player :" + player + "won the game");
         } else {
-            System.out.println("player :" + player + "BETTER LUCK NEXT TIME");
-
+            System.out.println("player :" + player + " \n   BETTER LUCK NEXT TIME");
         }
+
+        Console.pause();
     }
 
     private boolean moveValid(char shift) { // for extreme cases (edges of board)
@@ -148,7 +158,7 @@ public class NoShifting implements com.game.InterfGame {
 
     public void boardDisplay() {
 
-        System.out.println("\n\n\t\tNUMBER SHIFTING GAME");
+        System.out.println("\n\t\tNUMBER SHIFTING GAME");
 
         System.out.println("\t\t-------------------------");
         for (int arr[] : boardArr) {
@@ -168,15 +178,15 @@ public class NoShifting implements com.game.InterfGame {
     }
 
     public void ruleSet() {
-        System.out.println("\n\n\t\t\tNUMBER SHIFTING GAME");
-        System.out.println("\nfollowing are the rules");
-        System.out.println(" 1.no. of player are: 1");
-        System.out.println(" 2.the player has to arrange the no. in the board as given below. ");
-        System.out.println(" 3.to shift no.s we have following moves ");
-        System.out.println("   i. 's' then enter : moves the above no. down ");
-        System.out.println("   ii. 'w' then enter : moves the below no. up ");
-        System.out.println("   iii. 'd' then enter : moves the left no. right ");
-        System.out.println("   iv. 'a' then enter : moves the right no. left ");
+        System.out.println("\n\t\t\tNUMBER SHIFTING GAME");
+        System.out.println("\n RULE SET");
+        System.out.println("   1.no. of player are: 1");
+        System.out.println("   2.the player has to arrange the no. in the board as given below in the given moves.");
+        System.out.println("   3.to shift no.s we have following moves ");
+        System.out.println("     i.  's' then enter : moves the above no. down ");
+        System.out.println("     ii. 'w' then enter : moves the below no. up ");
+        System.out.println("     iii.'d' then enter : moves the left no. right ");
+        System.out.println("     iv. 'a' then enter : moves the right no. left ");
 
         // table :
         int x = 1;
@@ -197,7 +207,6 @@ public class NoShifting implements com.game.InterfGame {
             System.out.println("\t\t-------------------------");
         }
 
-        System.out.print("\n\n");
         Console.pause();
     }
 

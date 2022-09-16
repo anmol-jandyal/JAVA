@@ -53,9 +53,9 @@ public class TicTacToe implements com.game.InterfGame {
         System.out.println("\t\t\tTIC TAC TOE");
 
         System.out.println("\n\nenter player names");
-        System.out.print("player 1: x:");
+        System.out.print(" player 1: x:");
         player1 = sc.nextLine();
-        System.out.print("player 2: o :");
+        System.out.print(" player 2: o:");
         player2 = sc.nextLine();
 
         turn = toss();
@@ -80,7 +80,7 @@ public class TicTacToe implements com.game.InterfGame {
             boardDisplay();
 
             if (turn == 0) {
-                System.out.print("\n\n\n" + player1 + "'s turn  X :");
+                System.out.print("\n\n\t\t" + player1 + "'s turn  X :");
 
                 try {
                     index = sc.nextInt();
@@ -104,13 +104,13 @@ public class TicTacToe implements com.game.InterfGame {
                 }
             } else {
 
-                System.out.print("\n\n\n" + player2 + "'s turn O: ");
+                System.out.print("\n\n\t\t" + player2 + "'s turn O: ");
 
                 try {
                     index = sc.nextInt();
                 } catch (NoSuchElementException e) {
                     e.getMessage();
-                    System.out.println("please enter no. only and no characters");
+                    System.out.println("  please enter no. only and no characters");
                     Console.pause();
 
                     // flushing the buffer
@@ -136,12 +136,12 @@ public class TicTacToe implements com.game.InterfGame {
 
         {
             if (turn == 1) {
-                System.out.println("player : " + player1 + " won the match");
+                System.out.println("  player : " + player1 + " won the match");
             } else {
-                System.out.println("player : " + player1 + " won the match");
+                System.out.println("  player : " + player1 + " won the match");
             }
         } else {
-            System.out.println("\n\n!!!!!!!!!!!!!TIE NO ONE WINS!!!!!!!!!!!!");
+            System.out.println("\n  !!!!!!!!!!!!!TIE NO ONE WINS!!!!!!!!!!!!");
         }
         Console.pause();
     }
@@ -149,7 +149,7 @@ public class TicTacToe implements com.game.InterfGame {
     public void boardDisplay() {
 
         int x = 0;
-        System.out.println("\n\n\t\t\tTIC TAC TOE\n\n");
+        System.out.println("\n\t\t  TIC TAC TOE");
         System.out.print("\t\t--------------------\n");
 
         for (int i = 0; i < 3; i++) {
@@ -166,13 +166,15 @@ public class TicTacToe implements com.game.InterfGame {
     public void ruleSet() {
         Console.clearScr();
 
-        System.out.println("\n\n\t\t\tTIC TAC TOE");
-        System.out.println("\n\n 1. there will be 2 players who can play the game");
+        System.out.println("\n\t\t\tTIC TAC TOE");
+        System.out.println("\n RULE SETS:");
+        System.out.println("   1. there will be 2 players who can play the game");
         System.out.println(
-                " 2. that person will win the game who will successful in creating a linear sequence of ( 'O' or 'X' )");
-        System.out.println(" 3. the linear sequence may be diagonal, horizontal or vertical. ");
+                "   2. that person will win the game who will successful in creating a linear sequence of ( 'O' or 'X' )");
+        System.out.println("   3. the linear sequence may be diagonal, horizontal or vertical. ");
+        System.out.println("   4. In order to perform the move the user has to enter the no. displayed on the board.");
 
-        System.out.println("\n\n");
+        System.out.print("\n\n");
         Console.pause();
     }
 
