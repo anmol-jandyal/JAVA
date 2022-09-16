@@ -59,7 +59,7 @@ public class NoShifting implements com.game.InterfGame {
 
                     if (temp == 0) {
                         zeroCoord.x = i;
-                        zeroCoord.x = j;
+                        zeroCoord.y = j;
                     }
                     j++;
                 } else {
@@ -67,7 +67,7 @@ public class NoShifting implements com.game.InterfGame {
                 }
             }
         }
-
+        Console.pause();
         ruleSet();
 
         Console.clearScr();
@@ -96,7 +96,6 @@ public class NoShifting implements com.game.InterfGame {
 
                 switch (shift) {
                     case 'w':
-
                         boardArr[zeroCoord.x][zeroCoord.y] = boardArr[zeroCoord.x + 1][zeroCoord.y];
                         boardArr[++zeroCoord.x][zeroCoord.y] = 0;
                         break;
